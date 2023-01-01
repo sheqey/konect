@@ -7,6 +7,7 @@ const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 400;
+const host = process.env.hostname
 const connectdb = require("./database/connection")
 const bodyparser =require("body-parser");
 app.use(express.static(__dirname + '/js'));
@@ -38,7 +39,7 @@ app.use('/',require('./server/routes/routes'))
 
 
 
-app.listen(PORT , ()=>{
+app.listen(PORT,host ,()=>{
 
 console.log(`server is    listening at http://localhost:${PORT}`);
 });
