@@ -39,7 +39,7 @@ app.use('/',require('./server/routes/routes'))
 
 
 
-app.listen(PORT,host ,()=>{
+app.listen(PORT,()=>{
 
 console.log(`server is    listening at http://localhost:${PORT}`);
 });
