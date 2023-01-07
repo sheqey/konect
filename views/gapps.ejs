@@ -25,19 +25,22 @@
           </tr>
         </thead>
         <tbody>
-          <%for(var i= 0 ;i < apps.length;i++){%>
-            <tr>
-              <th scope="row"><%=i+=1%></th>
-              <td> <%=apps[i].pname%></td>
-            
-              <td><%=apps[i].pemail%></td>
-              <td><%=apps[i].dep%></td>
-              <td><%=apps[i].pdate%></td>
-              <td><%=apps[i].appdate%></td>
-              <td><%=apps[i].appdoc%></td>
-              <td> <li class="nav-item cta mr-md-2"><a href="/set?id=<%=apps[i]._id%>" class="nav-link">set apoinment</a></li></td>
-            </tr>
-            <%}%>
+           <% for (const app of apps) { %>
+                  <tr>
+                    <td>#</td>
+                    <td><%= app.pname %></td>
+                    <td><%= app.pemail %></td>
+                    <td><%= app.dep %></td>
+                    <td><%= app.pdate %></td>
+                    <td><%= app.appdate %></td>
+                    <td><%= app.appdoc %></td>
+                    <td>
+                      <li class="nav-item cta mr-md-2">
+                        <a href="/set?id=<%= app._id %>" class="nav-link">set apoinment</a>
+                      </li>
+                    </td>
+                  </tr>
+                <% } %>
         </tbody>
       </table>
 
